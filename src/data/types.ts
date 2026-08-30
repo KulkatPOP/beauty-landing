@@ -1,0 +1,2 @@
+export type Card = { title:string; eyebrow?:string; description:string; image?:string; result?:string };
+export type CreatorData = { slug:string; name:string; role:string; headline:string; intro:string; about:string; specialty:string; heroImage:string; palette:{ bg:string; surface:string; accent:string; ink:string }; nav:string[]; categories:Card[]; portfolio:Card[]; brands:string[]; stats?:{ value:string; label:string }[]; socials:{ label:string; href:string }[] };

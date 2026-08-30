@@ -1,0 +1,1 @@
+export function SectionTitle({eyebrow,title,center=false}:{eyebrow:string;title:string;center?:boolean}){return <header className={`mb-10 ${center?"text-center":""}`}><p className="mb-3 text-[11px] font-bold uppercase tracking-[.28em] opacity-60">{eyebrow}</p><h2 className="font-display text-5xl leading-none md:text-7xl">{title}</h2></header>}
