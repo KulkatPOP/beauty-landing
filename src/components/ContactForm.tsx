@@ -9,7 +9,13 @@ export function ContactForm() {
     setStatus("sending");
     const form = event.currentTarget;
     try {
-      const response = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(form) as unknown as Record<string, string>).toString() });
+      const encodedData = new URLSearchParams();
+      new FormData(form).forEach((value, key) => encodedData.append(key, String(value)));
+      const response = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encodedData.toString(),
+      });
       if (!response.ok) throw new Error("Form submission failed");
       setStatus("sent");
       form.reset();
@@ -18,7 +24,7 @@ export function ContactForm() {
 
   if (status === "sent") return <div role="status" className="rounded-[1.5rem] border border-current/15 bg-white p-8 text-center"><p className="font-display text-4xl">Brief recibido.</p><p className="mt-2 opacity-70">Gracias por considerar a Sofía. Recibirás una respuesta dentro de 48 horas hábiles.</p></div>;
 
-  return <form name="colaboraciones-beauty" method="POST" data-netlify="true" onSubmit={submit} className="grid gap-6 rounded-[1.5rem] bg-white p-6 shadow-[0_25px_80px_rgba(56,36,40,.08)] md:p-9">
+  return <form name="colaboraciones-beauty" onSubmit={submit} className="grid gap-6 rounded-[1.5rem] bg-white p-6 shadow-[0_25px_80px_rgba(56,36,40,.08)] md:p-9">
     <input type="hidden" name="form-name" value="colaboraciones-beauty" />
     <div className="grid gap-6 md:grid-cols-2">
       <label className="text-xs font-bold uppercase tracking-widest">Nombre<input name="nombre" required autoComplete="name" className="mt-2 w-full border-b border-current/25 bg-transparent py-3 outline-none transition-colors focus:border-[#b7596d]" placeholder="Tu nombre" /></label>
