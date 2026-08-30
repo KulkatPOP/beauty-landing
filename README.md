@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Visita `http://localhost:3000`. Personaliza contenido, colores e imágenes en `src/data/beauty.ts`.
+Visita `http://localhost:3001`. Personaliza contenido, colores e imágenes en `src/data/beauty.ts`.
 
 ## Producción
 
