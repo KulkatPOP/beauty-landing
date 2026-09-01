@@ -10,7 +10,7 @@ export function CreatorLanding({ data }: { data: CreatorData }) {
   return <main id="top" style={{ background: data.palette.bg, color: data.palette.ink }}>
     <a href="#contenido" className="fixed left-3 top-3 z-50 -translate-y-20 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wider text-[#382428] transition-transform focus:translate-y-0">Saltar al contenido</a>
     <section className="relative min-h-[100svh] overflow-hidden">
-      <Image unoptimized priority fill sizes="100vw" src={data.heroImage} alt={`${data.name}, creadora UGC de belleza`} className="object-cover object-[52%_center]" />
+      <Image priority fill sizes="100vw" src={data.heroImage} alt={`${data.name}, creadora UGC de belleza`} className="object-cover object-[52%_center]" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#382428]/90 via-[#382428]/50 to-[#382428]/15" />
       <Navbar name={data.name} />
       <div id="contenido" className="relative z-10 flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-14 pt-40 text-white md:px-12 md:pb-24">
@@ -49,7 +49,7 @@ export function CreatorLanding({ data }: { data: CreatorData }) {
     <section id="marcas" className="scroll-mt-8 overflow-hidden border-y border-current/15 py-12"><p className="mb-6 text-center text-[10px] font-bold uppercase tracking-[.3em] opacity-50">Marcas colaboradoras</p><div className="flex flex-wrap justify-center gap-x-10 gap-y-5 px-6 font-display text-2xl opacity-70 md:gap-x-16 md:text-3xl">{data.brands.map((brand) => <span key={brand}>{brand}</span>)}</div></section>
 
     <section id="contacto" className="mx-auto grid max-w-6xl scroll-mt-8 gap-14 px-6 py-24 md:grid-cols-[.8fr_1.2fr] md:px-12 md:py-36">
-      <div><SectionTitle eyebrow="Colaboraciones" title="Hablemos de tu próxima campaña." /><p className="max-w-md leading-7 opacity-70">Comparte el objetivo, los entregables y las fechas de tu proyecto. Prepararé una propuesta de contenido alineada con la voz y los resultados que necesita tu marca.</p><a href="mailto:marcas@sofiarose.com" className="mt-6 inline-block border-b border-current pb-1 text-sm transition-opacity hover:opacity-55">marcas@sofiarose.com</a></div>
+      <div><SectionTitle eyebrow="Colaboraciones" title="Hablemos de tu próxima campaña." /><p className="max-w-md leading-7 opacity-70">Comparte el objetivo, los entregables y las fechas de tu proyecto. Prepararé una propuesta de contenido alineada con la voz y los resultados que necesita tu marca.</p><a href="mailto:marcas@example.com" className="mt-6 inline-block border-b border-current pb-1 text-sm transition-opacity hover:opacity-55">marcas@example.com <span className="sr-only">(correo de demostración)</span></a></div>
       <ContactForm />
     </section>
     <Footer data={data} />

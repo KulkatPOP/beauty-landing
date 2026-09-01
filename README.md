@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Visita `http://localhost:3001`. Personaliza contenido, colores e imágenes en `src/data/beauty.ts`.
+Visita `http://localhost:3001`. Personaliza contenido, imágenes y enlaces de demostración en `src/data/beauty.ts`.
 
 ## Producción
 
@@ -18,4 +18,18 @@ npm run build
 npm start
 ```
 
-Para Netlify, importa este directorio como sitio independiente, usa `npm run build` y `.next` como directorio de publicación. Para GitHub, inicializa el repositorio dentro de esta carpeta y súbelo como proyecto propio.
+## Netlify
+
+Importa este repositorio como un sitio independiente. `netlify.toml` configura el build y `public/__forms.html` permite que Netlify Forms detecte el formulario con `@netlify/plugin-nextjs` v5. Activa la detección de formularios en Netlify y realiza un deploy de producción.
+
+Netlify proporciona `URL` durante el build. En otro proveedor configura `NEXT_PUBLIC_SITE_URL` con el dominio público para generar canonical, robots y sitemap correctos. No uses el valor de ejemplo en producción.
+
+## Verificación
+
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+```
+
+Consulta `docs/` para seguridad, pruebas, trazabilidad e información legal pendiente.

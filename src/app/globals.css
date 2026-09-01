@@ -10,7 +10,8 @@ img { display:block; width:100%; }
 .font-display { font-family:var(--font-serif),serif; }
 .reveal { animation:rise .8s ease both; }
 button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible { outline:2px solid currentColor; outline-offset:4px; }
 input::placeholder, textarea::placeholder { color: currentColor; opacity: .42; }
 section[id] { scroll-margin-top: 1rem; }
 @keyframes rise { from { opacity:0; transform:translateY(18px) } to { opacity:1; transform:none } }
-@media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto}.reveal{animation:none} }
+@media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto}.reveal{animation:none}*{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important} }

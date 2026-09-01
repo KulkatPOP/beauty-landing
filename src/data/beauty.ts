@@ -31,8 +31,8 @@ export const beauty: CreatorData = {
     { value: "18–34", label: "Edad principal" },
   ],
   socials: [
-    { label: "Instagram", href: "https://www.instagram.com/" },
-    { label: "TikTok", href: "https://www.tiktok.com/" },
-    { label: "Email", href: "mailto:marcas@sofiarose.com" },
+    { label: "Instagram · demo", href: "https://www.instagram.com/" },
+    { label: "TikTok · demo", href: "https://www.tiktok.com/" },
+    { label: "Email · demo", href: "mailto:marcas@example.com" },
   ],
 };
